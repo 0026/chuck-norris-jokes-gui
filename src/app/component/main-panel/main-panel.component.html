@@ -1,0 +1,40 @@
+<div class="Rectangle-5">
+    <img src='{{"assets/images/" + imageName +" photo@2x.png"}}' alt="Chuck Norris photo" class="Chuck-Norris-photo">
+    <div id="joke">
+        <p [innerHTML]="jokeAsText"></p>
+    </div>
+    <div>
+        <form [formGroup]="chuckForm" class="form">
+
+            <select formControlName="category" class='InputTextCategories'>
+                <option value="" disabled selected>Select category</option>
+                <option value="explicit">Explicit</option>
+                <option value="nerdy">Nerdy</option>
+            </select>
+
+            <input formControlName="name" class="Impersonate-Chuck-Norris-filled" (keyup)="onKey($event)" placeholder="Impersonate Chuck Norris">
+
+            <button type="button" (click)="send()" class="draw-button">
+                Draw a random {{characterName}} Joke
+            </button>
+        </form>
+
+        <div class="download-jokes">
+            <div class="count-form">
+                <button type="button" (click)="minus()" class="circle">
+                    -
+                </button>
+                <div>
+                    <input  class ="counter" value='{{counter}}'>
+                </div>
+                <button type="button" (click)="add()" class="circle">
+                    +
+                </button>
+            </div>
+            <button type="button" (click)="saveManyJokes()" class="download-button">
+               Save Jokes
+            </button>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,96 @@
+.Rectangle-5 {
+    width: 555px;
+    height: 704px;
+    padding: 48px 58px 72px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+    background-color: var(--white);
+}
+
+.Chuck-Norris-photo {
+    width: 100%;
+}
+
+#joke {
+    font-stretch: normal;
+    font-style: italic;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: var(--dark);
+    font-size: 1.3em;
+    font-family: Inter;
+    margin-top: 1em;
+}
+
+.InputTextCategories {
+    width: 100%;
+    height: 58px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    margin: 57px 0 16px;
+    padding: 12px 20px;
+    border-radius: 6px;
+    border: solid 2px var(--dark);
+    background-color: var(--white);
+}
+
+.Impersonate-Chuck-Norris-filled {
+    width: -webkit-fill-available;
+    height: 58px;
+    border-radius: 6px;
+    padding: 0.5em;
+    background-color: var(--white);
+}
+
+.form {
+    width: 100%;
+}
+
+.draw-button {
+    width: 100%;
+    height: 4em;
+    margin: 32px 0 52px;
+    object-fit: contain;
+    color: white;
+    background-color: rgb(52, 57, 79);
+    border: none
+}
+
+.download-jokes{
+    display: flex;
+    flex-grow: 2;
+}
+
+.count-form{
+    width:30%;
+    height: auto;
+    display: flex;
+    background-color: gray;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.download-button{
+    width:70%;
+    height: 4em;
+    object-fit: contain;
+    color: white;
+    background-color: rgb(52, 57, 79);
+}
+
+.circle{
+    border-radius: 50%;
+    border-style: solid;
+    width: 1.0em;
+    height: 1.0em;
+    text-align: center;
+    font-size: 2em;
+}
+.counter{
+    width: 1em;
+}
