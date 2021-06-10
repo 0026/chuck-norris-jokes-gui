@@ -30,5 +30,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Additional library
 
 ngx-filesaver - library used for save the jokes as .txt file
+
 Installation: `npm install file-saver ngx-filesaver --save` 
 
