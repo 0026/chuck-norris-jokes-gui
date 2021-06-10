@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { JokeService } from 'src/app/service/joke.service';
+import { FileSaverService } from 'ngx-filesaver';
 
 @Component({
   selector: 'app-main-panel',
@@ -16,7 +17,8 @@ export class MainPanelComponent implements OnInit {
   characterName = "Chuck Norris";
   counter = 0;
 
-  constructor(private jokeService: JokeService) {
+  constructor(private jokeService: JokeService,
+    private fileSaverService: FileSaverService) {
     this.joke = this.jokeService.getRandomJoke();
     this.joke.subscribe(resp => {
       this.jokeAsText = resp.value.joke
@@ -60,7 +62,6 @@ export class MainPanelComponent implements OnInit {
 
   onKey(a: any) {
     let name = this.chuckForm.value.name;
-    console.log(name)
     if (name == null || name.trim() == "") {
       this.characterName = "Chuck Norris";
     } else {
@@ -76,21 +77,14 @@ export class MainPanelComponent implements OnInit {
   }
 
   saveManyJokes() {
+    this.counter=  this.counter<0 ? 1:  this.counter;
+    console.log(this.counter)
     this.jokeService.getManyJokes(this.counter).subscribe(resp => {
-      console.log([resp.value])
       let jokes = ''
       for(let e of resp.value){
         jokes+=e.joke+ '\n'
       }
-      
-      var blob = new Blob([jokes], { type: 'text/csv' });
-      var link = window.document.createElement('a');
-      link.href = window.URL.createObjectURL(blob);
-      link.download = link.href.split('/').pop() + '.' + 'txt';
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      
+      this.fileSaverService.saveText(jokes, "jokes.txt");    
     })
   }
 }

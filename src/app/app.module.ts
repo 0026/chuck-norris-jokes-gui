@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { MainPanelComponent } from './component/main-panel/main-panel.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FileSaverModule } from 'ngx-filesaver';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FileSaverModule 
   ],
   providers: [],
   bootstrap: [AppComponent]
